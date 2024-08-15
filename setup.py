@@ -9,14 +9,19 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="edgetier-gsheet",
+    name="gsheet",
     version="1.0.0",
     description="Import and Export DataFrames to Google Sheets",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/EdgeTier/gsheet",
     author="EdgeTier",
-    packages=["gsheet"],
+    py_modules=["gsheet"],
     include_package_data=True,
     install_requires=["pandas", "gspread"],
+    entry_points={
+        "console_scripts": [
+            "realpython=reader.__main__:main",
+        ]
+    },
 )
