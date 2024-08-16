@@ -9,12 +9,12 @@ from gspread import (
 gaccount: Client|None = None
 
 
-def gsheet_auth(credentials_path = "credentials.json"):
+def gsheet_auth(credentials_path: str = "credentials.json") -> None:
     global gaccount
     gaccount = service_account(credentials_path)
 
 
-def gsheet_read(sheet_url, worksheet_name = None):
+def gsheet_read(sheet_url: str, worksheet_name: str|None = None) -> pd.DataFrame:
     if gaccount is None:
         raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
@@ -24,7 +24,7 @@ def gsheet_read(sheet_url, worksheet_name = None):
     return pd.DataFrame(worksheet.get_all_records())
 
 
-def gsheet_write(df, sheet_url, worksheet_name = None):
+def gsheet_write(df: pd.DataFrame, sheet_url: str, worksheet_name: str|None = None) -> None:
     if gaccount is None:
         raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
@@ -38,4 +38,3 @@ def gsheet_write(df, sheet_url, worksheet_name = None):
         worksheet = file.add_worksheet(title=worksheet_name, rows=None, cols=None)
         
     worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-
