@@ -18,8 +18,8 @@ setup(
     # author="EdgeTier",
     packages=["gsheet"],
     # include_package_data=True,
-    # install_requires=[
-        # "pandas", 
-        # "gspread"
-    # ],
+    install_requires=[
+        "pandas", 
+        "gspread"
+    ],
 )
