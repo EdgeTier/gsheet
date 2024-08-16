@@ -11,7 +11,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name="gsheet",
     version="1.0.0",
-    # description="Import and Export DataFrames to Google Sheets",
+    description="Import and Export DataFrames to Google Sheets",
     # long_description=README,
     # long_description_content_type="text/markdown",
     # url="https://github.com/EdgeTier/gsheet",
