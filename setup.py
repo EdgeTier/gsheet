@@ -10,7 +10,7 @@ from setuptools import setup
 # This call to setup() does all the work
 setup(
     name="gsheet",
-    version="1.0.0",
+    version="2.0.0",
     description="Import and Export DataFrames to Google Sheets",
     # long_description=README,
     # long_description_content_type="text/markdown",
