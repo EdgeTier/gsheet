@@ -9,3 +9,7 @@ __all__ = [
     "gsheet_read", 
     "gsheet_write"
 ]
+
+
+def printhi():
+    print("HI....")
