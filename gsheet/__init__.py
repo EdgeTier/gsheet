@@ -12,4 +12,4 @@ __all__ = [
 
 
 def printhi():
-    print("HI....")
+    print("BYE....")
