@@ -19,7 +19,11 @@ def gsheet_read(sheet_url: str, worksheet_name: str|None = None) -> pd.DataFrame
         raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
     file = gaccount.open_by_url(sheet_url)
-    worksheet = file.worksheet(worksheet_name)
+
+    if worksheet_name is None:
+        worksheet = file.get_worksheet(0)
+    else:
+        worksheet = file.worksheet(worksheet_name)
         
     return pd.DataFrame(worksheet.get_all_records())
 
