@@ -16,7 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/EdgeTier/gsheet",
     author="EdgeTier",
-    py_modules=["gsheet"],
+    packages=["gsheet"],
     include_package_data=True,
     install_requires=["pandas", "gspread"],
     entry_points={

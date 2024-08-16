@@ -2,26 +2,25 @@ import pandas as pd
 import gspread
 from gspread.exceptions import WorksheetNotFound
 
-# __all__ = ("gsheet_auth", "gsheet_read", "gsheet_write")
+__all__ = ["gsheet_auth", "gsheet_read", "gsheet_write"]
 
-
-_gc = None
+gaccount = None
 
 
 def gsheet_auth(credentials_path = "credentials.json"):
-    global gc
-    gc = gspread.service_account(credentials_path)
+    global gaccount
+    gaccount = gspread.service_account(credentials_path)
 
 
-def _gsheet_read(sheet_url, worksheet_name = None):
-    file = gc.open_by_url(sheet_url)
+def gsheet_read(sheet_url, worksheet_name = None):
+    file = gaccount.open_by_url(sheet_url)
     worksheet = file.worksheet(worksheet_name)
         
     return pd.DataFrame(worksheet.get_all_records())
 
 
-def _gsheet_write(df, sheet_url, worksheet_name = None):
-    file = gc.open_by_url(sheet_url)
+def gsheet_write(df, sheet_url, worksheet_name = None):
+    file = gaccount.open_by_url(sheet_url)
     
     try:
         worksheet = file.worksheet(worksheet_name)
@@ -32,5 +31,3 @@ def _gsheet_write(df, sheet_url, worksheet_name = None):
         
     worksheet.update([df.columns.values.tolist()] + df.values.tolist())
 
-
-__all__ = ["gsheet_auth"]
