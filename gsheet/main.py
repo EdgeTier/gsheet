@@ -1,7 +1,9 @@
 import pandas as pd
-import gspread
-from gspread.client import Client
-from gspread.exceptions import WorksheetNotFound
+from gspread import (
+    service_account,
+    Client,
+    WorksheetNotFound,
+) 
 
 
 gaccount: Client|None = None
@@ -9,12 +11,12 @@ gaccount: Client|None = None
 
 def gsheet_auth(credentials_path = "credentials.json"):
     global gaccount
-    gaccount = gspread.service_account(credentials_path)
+    gaccount = service_account(credentials_path)
 
 
 def gsheet_read(sheet_url, worksheet_name = None):
     if gaccount is None:
-        raise RuntimeError("Authenticate account first using gsheet_auth()")
+        raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
     file = gaccount.open_by_url(sheet_url)
     worksheet = file.worksheet(worksheet_name)
@@ -24,7 +26,7 @@ def gsheet_read(sheet_url, worksheet_name = None):
 
 def gsheet_write(df, sheet_url, worksheet_name = None):
     if gaccount is None:
-        raise RuntimeError("Authenticate account first using gsheet_auth()")
+        raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
     file = gaccount.open_by_url(sheet_url)
     
