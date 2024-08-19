@@ -13,4 +13,4 @@ __all__ = [
 
 
 def printhi():
-    print("absolute import :)")
+    print("does it work?")
