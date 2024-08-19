@@ -6,7 +6,7 @@ from gspread import (
 ) 
 
 
-gaccount: Client|None = None
+gaccount: Client | None = None
 
 
 def gsheet_auth(credentials_path: str = "credentials.json") -> None:
@@ -14,7 +14,7 @@ def gsheet_auth(credentials_path: str = "credentials.json") -> None:
     gaccount = service_account(credentials_path)
 
 
-def gsheet_read(sheet_url: str, worksheet_name: str|None = None) -> pd.DataFrame:
+def gsheet_read(sheet_url: str, worksheet_name: str | None = None) -> pd.DataFrame:
     if gaccount is None:
         raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
@@ -28,7 +28,7 @@ def gsheet_read(sheet_url: str, worksheet_name: str|None = None) -> pd.DataFrame
     return pd.DataFrame(worksheet.get_all_records())
 
 
-def gsheet_write(df: pd.DataFrame, sheet_url: str, worksheet_name: str|None = None) -> None:
+def gsheet_write(df: pd.DataFrame, sheet_url: str, worksheet_name: str | None = None) -> None:
     if gaccount is None:
         raise RuntimeError("Authenticate Account first using gsheet_auth()")
     
