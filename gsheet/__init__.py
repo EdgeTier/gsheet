@@ -1,16 +1,12 @@
 from gsheet.main import (
-    gsheet_auth,
-    gsheet_read,
-    gsheet_write,
+    auth,
+    read,
+    write,
 )
 
 
 __all__ = [
-    "gsheet_auth", 
-    "gsheet_read", 
-    "gsheet_write"
+    "auth", 
+    "read", 
+    "write"
 ]
-
-
-def printhi():
-    print("does it work?")
