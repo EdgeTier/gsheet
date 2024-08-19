@@ -10,6 +10,9 @@ __all__ = [
     "gsheet_write"
 ]
 
+import sys, importlib
+importlib.reload(sys.modules[__name__])
+
 
 def printhi():
-    print("plss :(")
+    print("alhamdolilah :)")
