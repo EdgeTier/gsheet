@@ -39,6 +39,6 @@ def gsheet_write(df: pd.DataFrame, sheet_url: str, worksheet_name: str|None = No
         worksheet.clear()
         
     except WorksheetNotFound:
-        worksheet = file.add_worksheet(title=worksheet_name, rows=None, cols=None)
+        worksheet = file.add_worksheet(title=worksheet_name)
         
     worksheet.update([df.columns.values.tolist()] + df.values.tolist())

@@ -1,8 +1,9 @@
-from .main import (
+from gsheet.main import (
     gsheet_auth,
     gsheet_read,
     gsheet_write,
 )
+
 
 __all__ = [
     "gsheet_auth", 
@@ -12,4 +13,4 @@ __all__ = [
 
 
 def printhi():
-    print("autoreload :)")
+    print("absolute import :)")
