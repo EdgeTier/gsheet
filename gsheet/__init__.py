@@ -1,3 +1,5 @@
+"""Import and Export DataFrames to Google Sheets"""
+
 from gsheet.main import (
     auth,
     read,
@@ -8,5 +10,5 @@ from gsheet.main import (
 __all__ = [
     "auth", 
     "read", 
-    "write"
+    "write",
 ]
