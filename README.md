@@ -56,7 +56,7 @@ gsheet.write(df, "https://docs.google.com/spreadsheets/.....", "new_sheet")
 2. Push new changes to _Master_ Branch on [Github](https://github.com/EdgeTier/gsheet)
 
 #### Jupyter Notebook
-When using Jupyter Notebook, new changes won't be reflected automatically after updating package. Either restart kernel each time or reload the package.
+When using Jupyter Notebook, new changes won't be reflected automatically after updating the package. Either restart the kernel each time or reload the package.
 
 ```python
 import gsheet
