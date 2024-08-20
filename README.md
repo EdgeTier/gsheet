@@ -1,7 +1,14 @@
+<div align="center">
+
 # 📊 GSheet
 
 Import and Export Pandas DataFrames to Google Sheets effortlessly
 
+[How to Use](#-how-to-use) •
+[Documentation](#-documentation) •
+[How to Update Package](#-how-to-update-package) 
+
+</div>
 
 ## 🚀 How to Use
 ```bash
