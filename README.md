@@ -15,7 +15,7 @@ gsheet.auth("/path/to/credentials/")
 
 df = gsheet.read("https://docs.google.com/spreadsheets/.....")
 
-gsheet.write(df, "https://docs.google.com/spreadsheets/.....", "new_data")
+gsheet.write(df, "https://docs.google.com/spreadsheets/.....", "new_sheet")
 ```
 
 **Note:** When using Jupyter Notebook, GSheet must be manually reloaded to reflect new changes to package. See [below](#jupyter-notebook)
@@ -24,6 +24,7 @@ gsheet.write(df, "https://docs.google.com/spreadsheets/.....", "new_data")
 ## 📝 Documentation
 #### `gsheet.auth()`
 * Requires path to `credentials.json` which contain Google Sheets API keys
+* `credentials.json` may be found in root of SageMaker Notebook
 * File must be shared with `client_email` found in `credentials.json`
 
 #### `gsheet.read()`
@@ -52,14 +53,15 @@ gsheet.write(df, "https://docs.google.com/spreadsheets/.....", "new_data")
     )
     ```
 
-2. To Update the package, simply push new changes to _Master_ Branch on [Github](https://github.com/EdgeTier/gsheet)
+2. Push new changes to _Master_ Branch on [Github](https://github.com/EdgeTier/gsheet)
 
 #### Jupyter Notebook
-When using Jupyter Notebook, new changes won't be reflected automatically. Either restart kernel each time or reload the module.
+When using Jupyter Notebook, new changes won't be reflected automatically after updating package. Either restart kernel each time or reload the package.
 
 ```python
 import gsheet
 
+# How to reload package
 import importlib
 importlib.reload(gsheet)
 ```
