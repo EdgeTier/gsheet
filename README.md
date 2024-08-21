@@ -31,7 +31,8 @@ gsheet.write(df, "https://docs.google.com/spreadsheets/.....", "new_sheet")
 ## 📝 Documentation
 #### `gsheet.auth()`
 * Requires path to `credentials.json` which contain Google Sheets API keys
-* `credentials.json` may be found in root of SageMaker Notebook
+    * This may be found in root of SageMaker Notebook
+    * eg. `/home/ec2-user/SageMaker/credentials.json`
 * File must be shared with `client_email` found in `credentials.json`
 
 #### `gsheet.read()`
